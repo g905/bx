@@ -12,6 +12,11 @@ foreach($discs as $i => $r) {
     $arResult["DISCIPLINES_ALL"][$i] = $r;
 }
 
+$users = $this->getUsers();
+foreach($users as $u) {
+    $arResult["USERS_ALL"][] = $u;
+}
+
 $sort = array("DISCIPLINE_ID" => "DESC", "SCORE" => "ASC");
 $all = $this->getAllScores($sort);
 
